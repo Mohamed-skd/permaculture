@@ -45,12 +45,29 @@ body > div {
 
   & > header {
     display: flow-root;
-    padding: 2rem;
-    text-align: center;
+    min-height: calc(100vh - 5rem);
+    background: fixed url("/imgs/hero-cover-small.jpg") no-repeat;
+    background-position: 50% 50%;
+    @media (width > 40rem) {
+      background: fixed url("/imgs/hero-cover-big.jpg") no-repeat;
+      background-position: 50% 50%;
+    }
     box-shadow: 0 0.2rem 0.2rem hsl(var(--clr-darker));
 
-    #theme {
-      button {
+    #title {
+      padding: 2rem 0;
+      background: linear-gradient(
+        to bottom,
+        hsl(var(--clr-lighter), 0.6) 60%,
+        transparent
+      );
+
+      h1 {
+        text-align: center;
+      }
+
+      #theme {
+        margin-right: 2rem;
         float: right;
         aspect-ratio: 2/1;
         border-radius: 0.4rem;
@@ -73,7 +90,7 @@ body > div {
   #page-nav {
     position: relative;
     z-index: 100;
-    margin: 1.6rem;
+    margin: 1rem;
     @media (width > 40rem) {
       position: sticky;
       top: 0;
@@ -98,7 +115,7 @@ body > div {
     margin: 2rem auto;
   }
   section {
-    scroll-margin-top: 3rem;
+    scroll-margin-top: 2rem;
     display: flow-root;
     margin: 1rem auto;
     padding: 0.4rem;

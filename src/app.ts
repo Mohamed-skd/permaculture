@@ -45,7 +45,7 @@ if (pageNav && pageSects && pageSectsTitle) {
 
 // theme
 const mediaDark = matchMedia("(prefers-color-scheme:dark)");
-const themeBt = select("#theme button");
+const themeBt = select("#theme");
 let darkMode = mediaDark.matches;
 
 const theme = (isDark: boolean = darkMode) => {
