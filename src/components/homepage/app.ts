@@ -9,7 +9,13 @@ export default function homepage() {
     const { name, img, link } = elem;
     const article = create("article");
     const artLink = create("a", { href: link, target: "_blank" });
-    const artImg = create("img", { src: img, alt: name });
+    const artImg = create("img", {
+      src: img,
+      alt: name,
+      loading: "lazy",
+      width: "250",
+      height: "250",
+    });
     const artName = create("p", { class: "link" });
 
     artName.textContent = formatText(name);
