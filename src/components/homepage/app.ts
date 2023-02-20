@@ -1,9 +1,9 @@
-import { create, formatText, select } from "../../ts/funcs.js";
-import { affiliationArticle, affiliationList } from "../../ts/types.js";
+import { create, formatText, select } from "../../utils/ts/funcs.js";
+import { affiliationArticle, affiliationList } from "../../utils/ts/types.js";
 
 export default function homepage() {
   // cultivate
-  const cultGrid = select("#cultivate > .grid");
+  const cultGrid = select("#cultivate > .grid")!;
 
   const affiliationElem = (elem: affiliationArticle) => {
     const { name, img, link } = elem;
@@ -25,10 +25,14 @@ export default function homepage() {
     return article;
   };
   const cultDatasFetch = async () => {
-    const cultDatas = await fetch("data/cultivate.json");
-    const cultDatasListe: affiliationList = await cultDatas.json();
+    try {
+      const cultDatas = await fetch("data/cultivate.json");
+      const cultDatasListe: affiliationList = await cultDatas.json();
 
-    cultDatasListe.map((data) => cultGrid?.append(affiliationElem(data)));
+      cultDatasListe.map((data) => cultGrid.append(affiliationElem(data)));
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   cultDatasFetch();
