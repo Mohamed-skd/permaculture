@@ -20,8 +20,8 @@ body > div {
   }
   @media (prefers-reduced-motion: reduce) {
     * {
-      animation: none;
-      transition: unset;
+      animation: none !important;
+      transition: none !important;
     }
   }
 
