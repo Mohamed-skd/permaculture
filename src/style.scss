@@ -125,11 +125,11 @@ body > div {
   & > footer {
     display: flow-root;
     margin-top: 4rem;
+    padding: 0.2rem;
     background-color: hsl(var(--clr-lighter), 0.4);
 
     #copyright {
       margin-right: 2rem;
-      padding: 0.2rem;
       color: currentColor;
       float: right;
     }
